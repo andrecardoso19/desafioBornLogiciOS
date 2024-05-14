@@ -86,6 +86,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(ArticleViewController(newsArticle: viewModel.newsList[indexPath.row]), animated: true)
+    }
 }
 
 extension HomeViewController: HomeViewModelDelegate {

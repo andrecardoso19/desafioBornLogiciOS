@@ -13,7 +13,7 @@ protocol HomeViewModelDelegate: AnyObject {
 }
 
 protocol HomeViewModelProtocol {
-    var newsList: [NewsArcticle] { get }
+    var newsList: [NewsArticle] { get }
     var delegate: HomeViewModelDelegate? { get set }
     func getNewsData()
 }
@@ -26,7 +26,7 @@ final class HomeViewModel: HomeViewModelProtocol {
         self.service = service
     }
     
-    private (set) var newsList: [NewsArcticle] = [NewsArcticle]()
+    private (set) var newsList: [NewsArticle] = [NewsArticle]()
     
     internal func getNewsData() {
         service.fetchNews { [ weak self ] result in

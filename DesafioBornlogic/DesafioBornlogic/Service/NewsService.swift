@@ -8,13 +8,13 @@
 import Foundation
 
 protocol NewsServiceProtocol {
-    func fetchNews(completion: @escaping (Result<[NewsArcticle], NewsArticleError>) -> Void)
+    func fetchNews(completion: @escaping (Result<[NewsArticle], NewsArticleError>) -> Void)
 }
 
 final class NewsService: NewsServiceProtocol {
     let apiKey = "c056882bea044051aa752382b23fedfc"
     
-    internal func fetchNews(completion: @escaping (Result<[NewsArcticle], NewsArticleError>) -> Void) {
+    internal func fetchNews(completion: @escaping (Result<[NewsArticle], NewsArticleError>) -> Void) {
         let apiUrl = "https://newsapi.org/v2/everything?q=bitcoin&pageSize=20&apiKey=\(apiKey)"
         
         guard let api = URL(string: apiUrl) else {

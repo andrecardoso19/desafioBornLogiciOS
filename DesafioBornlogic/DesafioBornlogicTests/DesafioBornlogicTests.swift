@@ -8,29 +8,56 @@
 import XCTest
 @testable import DesafioBornlogic
 
+final class NewsServiceMock : NewsServiceProtocol {
+    var expectedResult: (Result<[NewsArticle], NewsArticleError>) = .failure(.dataError)
+    
+    func fetchNews(completion: @escaping (Result<[NewsArticle], NewsArticleError>) -> Void) {
+        completion(expectedResult)
+    }
+}
+
+final class HomeViewModelDelegateSpy: HomeViewModelDelegate {
+    var onSuccessCount = 0
+    func onSuccess() {
+        onSuccessCount += 1
+    }
+    
+    var onFailureCount = 0
+    func onFailure(message: String) {
+        onFailureCount += 1
+    }
+}
+
+
 final class DesafioBornlogicTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    typealias Sut = (viewModel: HomeViewModelProtocol, delegate: HomeViewModelDelegateSpy, service: NewsServiceMock)
+    
+    private func makeSut() -> Sut {
+        let serviceMock = NewsServiceMock()
+        let sut = HomeViewModel(service: serviceMock)
+        let delegateSpy = HomeViewModelDelegateSpy()
+        sut.delegate = delegateSpy
+        
+        return (sut, delegateSpy, serviceMock)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testGetNews_WhenFailure_ShouldCallDelegateOnFailure() {
+        let sut = makeSut()
+        sut.service.expectedResult = .failure(.dataError)
+        
+        sut.viewModel.getNewsData()
+        
+        XCTAssertEqual(sut.delegate.onFailureCount, 1)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testGetNews_WhenSuccess_ShouldCallDelegateOnSuccess() {
+        let sut = makeSut()
+        let news = [NewsArticle(author: "Author", title: "Title", description: "Description", urlToImage: "urlImage")]
+        sut.service.expectedResult = .success(news)
+        
+        sut.viewModel.getNewsData()
+        
+        XCTAssertEqual(sut.viewModel.newsList, news)
+        XCTAssertEqual(sut.delegate.onSuccessCount, 1)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
