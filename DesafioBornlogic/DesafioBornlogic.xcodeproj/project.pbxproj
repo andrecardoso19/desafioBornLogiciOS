@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		ABA486412BF38A8800B65CB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA486402BF38A8800B65CB9 /* AppDelegate.swift */; };
 		ABA486432BF38A8800B65CB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA486422BF38A8800B65CB9 /* SceneDelegate.swift */; };
-		ABA486452BF38A8800B65CB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA486442BF38A8800B65CB9 /* ViewController.swift */; };
+		ABA486452BF38A8800B65CB9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA486442BF38A8800B65CB9 /* HomeViewController.swift */; };
 		ABA486482BF38A8800B65CB9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ABA486472BF38A8800B65CB9 /* Base */; };
 		ABA4864A2BF38A8B00B65CB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA486492BF38A8B00B65CB9 /* Assets.xcassets */; };
 		ABA4864D2BF38A8B00B65CB9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ABA4864C2BF38A8B00B65CB9 /* Base */; };
 		ABA486582BF38A8C00B65CB9 /* DesafioBornlogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA486572BF38A8C00B65CB9 /* DesafioBornlogicTests.swift */; };
 		ABA486622BF38A8C00B65CB9 /* DesafioBornlogicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA486612BF38A8C00B65CB9 /* DesafioBornlogicUITests.swift */; };
 		ABA486642BF38A8C00B65CB9 /* DesafioBornlogicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA486632BF38A8C00B65CB9 /* DesafioBornlogicUITestsLaunchTests.swift */; };
+		ABA4867C2BF390D000B65CB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA4867B2BF390D000B65CB9 /* HomeViewModel.swift */; };
+		ABA4867E2BF395AC00B65CB9 /* NewsArcticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA4867D2BF395AC00B65CB9 /* NewsArcticle.swift */; };
+		ABA486812BF3974E00B65CB9 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA486802BF3974E00B65CB9 /* HomeCell.swift */; };
+		ABA486832BF3A21700B65CB9 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA486822BF3A21700B65CB9 /* NewsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,7 @@
 		ABA4863D2BF38A8800B65CB9 /* DesafioBornlogic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioBornlogic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA486402BF38A8800B65CB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA486422BF38A8800B65CB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ABA486442BF38A8800B65CB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABA486442BF38A8800B65CB9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ABA486472BF38A8800B65CB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABA486492BF38A8B00B65CB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA4864C2BF38A8B00B65CB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		ABA4865D2BF38A8C00B65CB9 /* DesafioBornlogicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioBornlogicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA486612BF38A8C00B65CB9 /* DesafioBornlogicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioBornlogicUITests.swift; sourceTree = "<group>"; };
 		ABA486632BF38A8C00B65CB9 /* DesafioBornlogicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioBornlogicUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ABA4867B2BF390D000B65CB9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		ABA4867D2BF395AC00B65CB9 /* NewsArcticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArcticle.swift; sourceTree = "<group>"; };
+		ABA486802BF3974E00B65CB9 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		ABA486822BF3A21700B65CB9 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,11 @@
 		ABA4863F2BF38A8800B65CB9 /* DesafioBornlogic */ = {
 			isa = PBXGroup;
 			children = (
+				ABA486762BF3903500B65CB9 /* Model */,
+				ABA486712BF3900A00B65CB9 /* Scenes */,
 				ABA486702BF38DB600B65CB9 /* Config */,
 				ABA486402BF38A8800B65CB9 /* AppDelegate.swift */,
 				ABA486422BF38A8800B65CB9 /* SceneDelegate.swift */,
-				ABA486442BF38A8800B65CB9 /* ViewController.swift */,
 				ABA4864E2BF38A8B00B65CB9 /* Info.plist */,
 			);
 			path = DesafioBornlogic;
@@ -133,6 +142,65 @@
 				ABA4864B2BF38A8B00B65CB9 /* LaunchScreen.storyboard */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		ABA486712BF3900A00B65CB9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ABA486722BF3900F00B65CB9 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ABA486722BF3900F00B65CB9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ABA4867A2BF3907B00B65CB9 /* Service */,
+				ABA486792BF3907600B65CB9 /* View */,
+				ABA486782BF3906300B65CB9 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ABA486762BF3903500B65CB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABA4867D2BF395AC00B65CB9 /* NewsArcticle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABA486782BF3906300B65CB9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ABA4867B2BF390D000B65CB9 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABA486792BF3907600B65CB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABA4867F2BF3973A00B65CB9 /* Cell */,
+				ABA486442BF38A8800B65CB9 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABA4867A2BF3907B00B65CB9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				ABA486822BF3A21700B65CB9 /* NewsService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		ABA4867F2BF3973A00B65CB9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ABA486802BF3974E00B65CB9 /* HomeCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABA486452BF38A8800B65CB9 /* ViewController.swift in Sources */,
+				ABA486832BF3A21700B65CB9 /* NewsService.swift in Sources */,
+				ABA486452BF38A8800B65CB9 /* HomeViewController.swift in Sources */,
 				ABA486412BF38A8800B65CB9 /* AppDelegate.swift in Sources */,
 				ABA486432BF38A8800B65CB9 /* SceneDelegate.swift in Sources */,
+				ABA4867E2BF395AC00B65CB9 /* NewsArcticle.swift in Sources */,
+				ABA486812BF3974E00B65CB9 /* HomeCell.swift in Sources */,
+				ABA4867C2BF390D000B65CB9 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
