@@ -2,7 +2,7 @@
 //  DesafioBornlogicUITests.swift
 //  DesafioBornlogicUITests
 //
-//  Created by Ana Beatriz Santos on 14/05/24.
+//  Created by André Cardoso Aragão on 14/05/24.
 //
 
 import XCTest
