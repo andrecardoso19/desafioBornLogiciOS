@@ -52,7 +52,7 @@ final class DesafioBornlogicTests: XCTestCase {
     
     func testGetNews_WhenSuccess_ShouldCallDelegateOnSuccess() {
         let sut = makeSut()
-        let news = [NewsArticle(author: "Author", title: "Title", description: "Description", urlToImage: "urlImage")]
+        let news = [NewsArticle(author: "Author", title: "Title", description: "Description", urlToImage: "urlImage", content: "content", publishedAt: "20/02/2020", url: "fullarticle")]
         sut.service.expectedResult = .success(news)
         
         sut.viewModel.getNewsData()

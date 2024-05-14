@@ -14,7 +14,7 @@ struct NewsArticleResponse: Decodable {
 }
 
 struct NewsArticle: Decodable, Equatable {
-    // Disclaimer: nao sei exatamente a funcionalidade desse metodo, o xcode obrigou a colocar isso, nunca precisei usar
+    // nao sei exatamente a funcionalidade desse metodo, o xcode obrigou a colocar isso, nunca precisei usar
     static func == (lhs: NewsArticle, rhs: NewsArticle) -> Bool {
         true
     }
@@ -26,6 +26,7 @@ struct NewsArticle: Decodable, Equatable {
     let urlToImage: String
     let content: String
     let publishedAt: String
+    let url: String
 }
 
 struct Source: Decodable {

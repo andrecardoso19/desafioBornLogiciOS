@@ -2,13 +2,15 @@
 //  ArticleView.swift
 //  DesafioBornlogic
 //
-//  Created by Ana Beatriz Santos on 14/05/24.
+//  Created by André Cardoso Aragão on 14/05/24.
 //
 
 import Foundation
 import UIKit
 
 final class ArticleView: UIView {
+    var pushToSafariView = {}
+    
     private lazy var newsImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .white
@@ -20,7 +22,7 @@ final class ArticleView: UIView {
     
     private lazy var newsTitleLabel: UILabel = {
        let view = UILabel()
-        view.numberOfLines = 2
+        view.numberOfLines = -1
         view.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -46,6 +48,16 @@ final class ArticleView: UIView {
        let view = UILabel()
         view.numberOfLines = -1
         view.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var fullArticleButton: UIButton = {
+       let view = UIButton()
+        view.backgroundColor = .white
+        view.setTitleColor(.tintColor, for: .normal)
+        view.setTitle("Read full article", for: .normal)
+        view.addTarget(self, action: #selector(goToSafariView), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -87,12 +99,13 @@ final class ArticleView: UIView {
         addSubview(newsAuthorLabel)
         addSubview(newsDateLabel)
         addSubview(newsContentLabel)
+        addSubview(fullArticleButton)
         
         NSLayoutConstraint.activate([
             newsImageView.widthAnchor.constraint(equalTo: self.widthAnchor),
             newsImageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.4),
             newsImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            newsImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            newsImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             
             newsTitleLabel.centerXAnchor.constraint(equalTo: newsImageView.centerXAnchor),
             newsTitleLabel.widthAnchor.constraint(equalTo: newsImageView.widthAnchor),
@@ -106,7 +119,15 @@ final class ArticleView: UIView {
             
             newsContentLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
             newsContentLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            newsContentLabel.topAnchor.constraint(equalTo: newsDateLabel.bottomAnchor, constant: 15)
+            newsContentLabel.topAnchor.constraint(equalTo: newsDateLabel.bottomAnchor, constant: 15),
+            
+            fullArticleButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            fullArticleButton.topAnchor.constraint(equalTo: newsContentLabel.bottomAnchor, constant: 5),
+            fullArticleButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4)
         ])
+    }
+    
+    @objc func goToSafariView() {
+        pushToSafariView()
     }
 }

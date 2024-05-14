@@ -2,11 +2,12 @@
 //  ArticleViewController.swift
 //  DesafioBornlogic
 //
-//  Created by Ana Beatriz Santos on 14/05/24.
+//  Created by André Cardoso Aragão on 14/05/24.
 //
 
 import Foundation
 import UIKit
+import SafariServices
 
 final class ArticleViewController: UIViewController {
     private let newsArticle: NewsArticle
@@ -28,6 +29,10 @@ final class ArticleViewController: UIViewController {
     private func setupView() {
         title = "News Article"
         let view = ArticleView()
+        view.pushToSafariView = { [weak self] in
+            guard let self = self else {return}
+            self.showSafariViewController()
+        }
         
         view.setupView(imageUrl: newsArticle.urlToImage,
                        title: newsArticle.title,
@@ -47,5 +52,10 @@ final class ArticleViewController: UIViewController {
                     let dateString = formatterString.string(from: date ?? Date())
         
         return dateString
+    }
+    
+    func showSafariViewController() {
+        let safariVC = SFSafariViewController(url: URL(string: newsArticle.url)!)
+        self.navigationController?.present(safariVC, animated: true, completion: nil)
     }
 }

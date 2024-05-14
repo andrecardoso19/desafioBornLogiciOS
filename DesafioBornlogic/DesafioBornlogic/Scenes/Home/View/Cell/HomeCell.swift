@@ -89,7 +89,9 @@ final class HomeCell: UITableViewCell {
             newsImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.25),
             
             newsTitleLabel.leadingAnchor.constraint(equalTo: newsImageView.trailingAnchor, constant: 5),
+            newsTitleLabel.topAnchor.constraint(equalTo: newsImageView.topAnchor),
             newsTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            
             newsAuthorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             newsAuthorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             

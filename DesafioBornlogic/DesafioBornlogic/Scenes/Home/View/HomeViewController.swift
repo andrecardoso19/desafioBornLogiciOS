@@ -88,6 +88,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(ArticleViewController(newsArticle: viewModel.newsList[indexPath.row]), animated: true)
     }
 }
